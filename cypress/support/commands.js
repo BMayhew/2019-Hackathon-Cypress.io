@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+//Custom Login Helper For Section 3
+Cypress.Commands.add('login', () => {
+    cy.get('form #username').type('Testy McTester')
+    cy.get('form #password').type('Passymcpassword!1')
+    cy.get('#log-in').click()
+})
+
+//Custom Login Helper for Adds
+Cypress.Commands.add('loginwadds', () => {
+    cy.visit('/hackathon.html?showAd=true')
+    // cy.visit('/hackathonV2.html?showAd=true')
+    cy.get('form #username').type('Testy McTester')
+    cy.get('form #password').type('Passymcpassword!1')
+    cy.get('#log-in').click()
+})

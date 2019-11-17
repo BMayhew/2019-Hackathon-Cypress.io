@@ -1,24 +1,8 @@
 /// <reference types="cypress" />
 
 beforeEach(function () {
-    //cy.visit('https://demo.applitools.com/hackathonV2.html')
-    cy.visit('https://demo.applitools.com/hackathon.html')
-})
-
-//Custom Login Helper For Section 3
-Cypress.Commands.add('login', () => {
-    cy.get('form #username').type('Testy McTester')
-    cy.get('form #password').type('Passymcpassword!1')
-    cy.get('#log-in').click()
-})
-
-//Custom Login Helper for Adds
-Cypress.Commands.add('loginwadds', () => {
-    cy.visit('https://demo.applitools.com/hackathon.html?showAd=true')
-    // cy.visit('https://demo.applitools.com/hackathonV2.html?showAd=true')
-    cy.get('form #username').type('Testy McTester')
-    cy.get('form #password').type('Passymcpassword!1')
-    cy.get('#log-in').click()
+    //cy.visit('/hackathonV2.html')
+    cy.visit('/hackathon.html')
 })
 
 //Array Equal?

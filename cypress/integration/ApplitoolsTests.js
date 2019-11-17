@@ -1,24 +1,9 @@
 /// <reference types="cypress" />
 
 beforeEach(function () {
-    //cy.visit('https://demo.applitools.com/hackathonV2.html')
-    cy.visit('https://demo.applitools.com/hackathon.html')
-})
-
-//Custom Login Helper For Section 3
-Cypress.Commands.add('login', () => {
-    cy.get('form #username').type('Testy McTester')
-    cy.get('form #password').type('Passymcpassword!1')
-    cy.get('#log-in').click()
-})
-
-//Custom Login Helper for Adds
-Cypress.Commands.add('loginwadds', () => {
-    cy.visit('https://demo.applitools.com/hackathon.html?showAd=true')
-    // cy.visit('https://demo.applitools.com/hackathonV2.html?showAd=true')
-    cy.get('form #username').type('Testy McTester')
-    cy.get('form #password').type('Passymcpassword!1')
-    cy.get('#log-in').click()
+    cy.eyesOpen();
+    //cy.visit('/hackathonV2.html')
+    cy.visit('/hackathon.html')
 })
 
 //Array Equal?
@@ -49,7 +34,6 @@ Array.prototype.equals = function (array, strict) {
 
 //Section 1
 it('should validate login page title and meta data', () => {   
-    cy.eyesOpen();
     cy.eyesCheckWindow('Login Page');
     cy.title().should('include', 'ACME demo app')
     cy.document().get('head meta[name="description"]').should('have.attr', 'content', 'ACME demo app')

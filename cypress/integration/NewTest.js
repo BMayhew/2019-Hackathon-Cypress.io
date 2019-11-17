@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 beforeEach(function () {
-    cy.visit('https://demo.applitools.com/hackathon.html')
-    // cy.visit('https://demo.applitools.com/hackathonV2.html')
+    cy.visit('/hackathon.html')
+    // cy.visit('/hackathonV2.html')
 })
 
 //Custom Login Helper For Section 3

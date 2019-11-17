@@ -1,3 +1,4 @@
 {
-    "watchForFileChanges": false
+    "watchForFileChanges": false,
+    "baseUrl": "https://demo.applitools.com/"
 }
