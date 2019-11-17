@@ -32,8 +32,8 @@ Cypress.Commands.add('login', () => {
 
 //Custom Login Helper for Adds
 Cypress.Commands.add('loginwadds', () => {
-    cy.visit('/hackathon.html?showAd=true')
-    // cy.visit('/hackathonV2.html?showAd=true')
+    cy.visit(Cypress.env("v1wadd"))
+    //cy.visit(Cypress.env("v2wadd"))
     cy.get('form #username').type('Testy McTester')
     cy.get('form #password').type('Passymcpassword!1')
     cy.get('#log-in').click()
