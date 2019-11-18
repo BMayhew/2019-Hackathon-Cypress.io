@@ -2,8 +2,8 @@
 
 beforeEach(function () {
     cy.eyesOpen();
-    //cy.visit('/hackathonV2.html')
-    cy.visit('/hackathon.html')
+    cy.visit(Cypress.env("v1"))
+    //cy.visit(Cypress.env("v2"))
 })
 
 //Array Equal?
