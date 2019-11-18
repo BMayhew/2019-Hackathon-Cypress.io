@@ -1,12 +1,4 @@
 {
     "watchForFileChanges": false,
-    "baseUrl": "https://demo.applitools.com/",
-    "env": {
-        "v1": "/hackathon.html",
-        "v2": "/hackathonV2.html",
-        "v1app": "hackathonApp.html",
-        "v2app": "hackathonAppV2.html",
-        "v1wadd": "/hackathon.html?showAd=true",
-        "v2wadd": "/hackathonV2.html?showAd=true"
-    }
+    "baseUrl": "https://demo.applitools.com/"
 }
