@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
 
-//const urls = ["/hackathon.html"];
-const urls = ["/hackathonV2.html"];
-
+const urls = ["/hackathon.html"];
+//const urls = ["/hackathonV2.html"];
 
 beforeEach(function() {
   cy.eyesOpen();
@@ -21,28 +20,13 @@ urls.forEach(url => {
       cy.eyesCheckWindow("Login Page");
     });
 
-    it("should validate login page logo and title", () => {
-
-    });
-
-    it("should validate username component", () => {
-
-    });
-
-    it("should validate password component", () => {
-
-    });
-
     it("should validate button commponent", () => {
       cy.eyesCheckWindow({
         sizeMode: "selector",
         selector: ".buttons-w"
       });
     });
-
-    it("should have proper social media links", () => {
   });
-});
 
   describe(`Data-Driven Test - Login  on ${url}`, () => {
     beforeEach(function() {
@@ -70,8 +54,8 @@ urls.forEach(url => {
       cy.get("form #password").type("Passymcpassword!1");
       cy.get("#log-in").click();
       cy.eyesCheckWindow("Login Page - logged in properly");
+    });
   });
-});
 
   describe(`Table Sort Test - Recent Transactions on ${url}`, () => {
     beforeEach(function() {
@@ -87,14 +71,6 @@ urls.forEach(url => {
     });
   });
 
-    it("should sort Recent Transaction by Amounts in  ascending order - top row check", () => {
-      
-    });
-
-    it("Row data should stay consistent after sorting", () => {
-     
-    });
-
   describe(`Canvas Chart Test - Compare Expenses on ${url}`, () => {
     beforeEach(function() {
       cy.visit(url);
@@ -103,7 +79,7 @@ urls.forEach(url => {
       cy.login();
       cy.get("#showExpensesChart").click();
       cy.wait(3000);
-      cy.eyesCheckWindow('should display expenses chart');
+      cy.eyesCheckWindow("should display expenses chart");
     });
   });
 
@@ -114,9 +90,9 @@ urls.forEach(url => {
     it("should show next years data in expenses chart", () => {
       cy.login();
       cy.get("#showExpensesChart").click();
-      cy.get("#addDataset").click()
+      cy.get("#addDataset").click();
       cy.wait(3000);
-      cy.eyesCheckWindow('should display expenses chart with next years info');
+      cy.eyesCheckWindow("should display expenses chart with next years info");
     });
   });
 
@@ -131,18 +107,6 @@ urls.forEach(url => {
         sizeMode: "selector",
         selector: ".element-balances"
       });
-
-    });
-
-    it("should support dynamic proper advertisments", () => {
-      cy.login();
-      cy.get(".element-balances")
-        .find("img")
-        .should($img => {
-          const imageSrc0 = $img[0].src;
-
-          expect(imageSrc0).to.match(/img\/*.*\.gif/);
-        });
     });
   });
 });
