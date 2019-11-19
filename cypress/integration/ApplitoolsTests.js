@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-const urls = ["/hackathon.html"];
-//const urls = ["/hackathonV2.html"];
+//const urls = ["/hackathon.html"];
+const urls = ["/hackathonV2.html"];
 
 beforeEach(function() {
   cy.eyesOpen();

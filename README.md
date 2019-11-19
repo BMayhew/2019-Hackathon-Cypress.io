@@ -4,7 +4,11 @@
 
 I'm typically a Ruby guy, using Watir / PageObject Gem to run my UI automated tests. When I saw the hackathon didn't have Ruby as an available option, I decided this would be a good time to learn Cypress. There are a few teams in my org using it already, and this allowed me to get familiar with it.
 
-## Running the suite
+## Takeaways From the Project
+
+My biggest take away was that it is really easy to get Applitools up and running an any project. I viewed the tutorials for other languages and the instructions and docs for integration are fantastic. For the 4th challenge listed below `Canvas Chart Test`, a HTML5 Canvas is rendered. I was unable to find any documentation on how to check this within Cypress or for that matter in any other tool. Using Applitools to check and reveal the differences between the runs was an eye opener. There are many data visualization tools coming onto the market, with complex queries behind them that need to be tested. Applitools is now my go to recomendation.
+
+## Running the Suite
 
 * Downlaod the repo: `git clone https://github.com/BMayhew/2019-Hackathon-Cypress.io.git`
 
@@ -12,7 +16,7 @@ I'm typically a Ruby guy, using Watir / PageObject Gem to run my UI automated te
 
 * To open cypress: `npx cypress open`
 
-* Click on TraditionalTests.js to run. This will open a chrome window and run the test suite first against the V1 url and then againts the V2 url. All failures should be avialable via cypress tool. My tests were not specific enough to catch every single styling change, though it did catch quite a few defects. 
+* Click on TraditionalTests.js to run. This will open a chrome window and run the test suite first against the V1 url and then againts the V2 url. All failures should be avialable via cypress tool. My tests were not specific enough to catch every single styling change, though it did catch quite a few defects.
 
 * To run the Visual Tests click on ApplitoolsTests.js. This will open Chrome and run the test suite against V2 by default. If you want to point the Visual Tests at the V1 url, just uncomment `//const urls = ["/hackathon.html"];` within the test file. Make sure to comment out the V2 const.
 
