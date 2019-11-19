@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+/// <reference types="@applitools/eyes-cypress" />
 
 //const urls = ["/hackathon.html"];
 const urls = ["/hackathonV2.html"];
