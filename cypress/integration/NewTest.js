@@ -1,18 +1,19 @@
 /// <reference types="cypress" />
 
+import { LoginPage } from "../page-object/login-page";
+
+const loginPage = new LoginPage();
 const urls = ["/hackathon.html", "/hackathonV2.html"];
 
 urls.forEach(url => {
   describe(`Login Page UI Elements Test on ${url}`, () => {
     beforeEach(function() {
-      cy.visit(`${url}?showAd=true`);
+      loginPage.navigate(`${url}?showAd=true`)
     });
     it("should show proper advertisments hard coded", () => {
-      cy.login();
+      loginPage.login("Testy", "Mctesterface");
       cy.get(".element-balances").within(() => {
-        cy.get("#flashSale").should(
-            "include.html", 
-            'src="img/flashSale.gif"');
+        cy.get("#flashSale").should("include.html", 'src="img/flashSale.gif"');
         cy.get("#flashSale2").should(
           "include.html",
           'src="img/flashSale2.gif"'
@@ -21,7 +22,7 @@ urls.forEach(url => {
     });
 
     it("should show atleast 2 advertisements ", () => {
-      cy.login();
+      loginPage.login("Testy", "Mctesterface");
       cy.get(".element-balances")
         .find("img")
         .should($img => {
@@ -30,7 +31,7 @@ urls.forEach(url => {
     });
 
     it("should support dynamic proper advertisments", () => {
-      cy.login();
+      loginPage.login("Testy", "Mctesterface");
       cy.get(".element-balances")
         .find("img")
         .should($img => {
