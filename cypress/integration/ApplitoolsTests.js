@@ -4,15 +4,15 @@
 //const urls = ["/hackathon.html"];
 const urls = ["/hackathonV2.html"];
 
-beforeEach(function() {
-  cy.eyesOpen();
-});
-
-afterEach(function() {
-  cy.eyesClose();
-});
-
 urls.forEach(url => {
+  beforeEach(function() {
+    cy.eyesOpen();
+  });
+
+  afterEach(function() {
+    cy.eyesClose();
+  });
+
   describe(`Login Page UI Elements Test on ${url}`, () => {
     beforeEach(function() {
       cy.visit(url);
